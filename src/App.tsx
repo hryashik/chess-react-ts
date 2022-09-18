@@ -6,15 +6,16 @@ import BoardComponent from "./components/BoardComponent";
 function App() {
   const [board, setBoard] = useState(new Board())
 
-  useEffect(() => {
-    restart()
-  }, [])
-
   function restart() {
     const newBoard = new Board()
     newBoard.initCells()
+    newBoard.addFigures()
     setBoard(newBoard)
   }
+
+  useEffect(() => {
+    restart()
+  }, [])
 
   return (
     <div className="app">

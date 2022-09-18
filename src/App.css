@@ -3,6 +3,9 @@
     padding: 0;
     box-sizing: border-box;
 }
+body {
+    background-color: ghostwhite;
+}
 .app {
     height: 100vh;
     width: 100vw;
@@ -15,6 +18,7 @@
     height: calc(64px * 8);
     display: flex;
     flex-wrap: wrap;
+    box-shadow: 1px 1px 5px grey;
 }
 .cell {
     width: 64px;
@@ -23,9 +27,14 @@
     justify-content: center;
     align-items: center;
 }
+.cell img {
+    width: 48px;
+    height: 48px;
+    position: relative;
+}
 .black {
     background-color: deepskyblue;
 }
 .white {
-    background-color: #fcebbd;
+    background-color: #ffe29d;
 }
