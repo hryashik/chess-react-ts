@@ -36,5 +36,14 @@ body {
     background-color: deepskyblue;
 }
 .white {
-    background-color: #ffe29d;
+    background-color: #fcd889;
+}
+.selected {
+    background-color: brown;
+}
+.available {
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background-color: #45ea1c;
 }
