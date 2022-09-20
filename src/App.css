@@ -15,4 +15,22 @@
   width: calc(64px * 8);
   height: calc(64px * 8);
   display: flex;
+  flex-wrap: wrap;
+}
+.cell {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cell img {
+  width: 55px;
+  height: 55px;
+}
+.black {
+  background-color: darkcyan;
+}
+.white {
+  background-color: #fbdca4;
 }
