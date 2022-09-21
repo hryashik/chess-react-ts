@@ -1,22 +1,17 @@
-import { Colors } from "./Colors";
+import { Colors } from "./Colors-type";
 import { Figure } from "./figures/Figure";
-import { Board } from "./Board";
 
 export class Cell {
-	readonly x: number
-	readonly y: number
-	readonly color: Colors
+	x: number
+	y: number
+	color: Colors
 	figure: Figure | null
-	board: Board
-	available: boolean // Можешь ли переместиться
-	id: number // Ключ для реакта
-	constructor(board: Board, x: number, y: number, color: Colors, figure: Figure | null) {
-		this.board = board
+	id: number
+	constructor(x: number, y: number, color: Colors) {
 		this.x = x
 		this.y = y
 		this.color = color
-		this.figure = figure
-		this.available = false
+		this.figure = null
 		this.id = Math.random()
 	}
 }

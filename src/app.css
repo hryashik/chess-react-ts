@@ -1,6 +1,6 @@
 * {
-    margin: 0;
     padding: 0;
+    margin-right: 0;
     box-sizing: border-box;
 }
 .app {
@@ -17,15 +17,30 @@
     flex-wrap: wrap;
 }
 .cell {
-    width: 64px;
     height: 64px;
+    width: 64px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.cell img {
+    height: 55px;
+    width: 55px;
+    cursor: pointer;
+}
 .black {
-    background-color: deepskyblue;
+    background-color: darkcyan;
 }
 .white {
-    background-color: #fcebbd;
+    background-color: #fedc96;
+}
+.selected {
+    background-color: brown;
+}
+.available {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background-color: greenyellow;
 }

@@ -1,16 +1,20 @@
-import React from 'react';
+import React from "react";
 import { Cell } from "../models/Cell";
 
-interface CellProps {
+type CellProps = {
 	cell: Cell
+	selected: boolean
+	click: (cell: Cell) => void
 }
 
-const CellComponent: React.FC<CellProps> = ({cell}) => {
+export const CellComponent: React.FC<CellProps> = ({ cell, selected, click }) => {
 	return (
-		<div className={'cell ' + `${cell.color}`}>
-			{cell.figure}
+		<div
+			className={[ 'cell', cell.color, selected ? 'selected' : '' ].join(' ')}
+			onClick={() => click(cell)}
+		>
+			{cell.figure && <img src={cell.figure.logo} alt=""/>} {/*Фигуры*/}
+			{/*{!cell.figure && <div className={'available'}></div>}*/}
 		</div>
 	)
-};
-
-export default CellComponent;
+}

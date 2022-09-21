@@ -1,26 +1,27 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import './app.css'
+import { BoardComponent } from "./components/BoardComponent";
 import { Board } from "./models/Board";
-import BoardComponent from "./components/BoardComponent";
 
-function App() {
-  const [board, setBoard] = useState(new Board())
+const App: React.FC = () => {
+	const [board, setBoard] = useState(new Board())
 
-  useEffect(() => {
-    restart()
-  }, [])
+	useEffect(() => {
+		start()
+	}, [])
 
-  function restart() {
-    const newBoard = new Board()
-    newBoard.initCells()
-    setBoard(newBoard)
-  }
+	function start() {
+		const newBoard = new Board()
+		newBoard.initCells()
+		newBoard.addFigures()
+		setBoard(newBoard)
+	}
 
-  return (
-    <div className="app">
-      <BoardComponent board={board} setBoard={setBoard}/>
-    </div>
-  );
+	return (
+		<div className={'app'}>
+			<BoardComponent board={board}/>
+		</div>
+	)
 }
 
-export default App;
+export default App
