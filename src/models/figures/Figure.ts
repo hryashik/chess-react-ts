@@ -28,10 +28,7 @@ export class Figure {
 		this.id = Math.random()
 	}
 	canMove(target: Cell) : boolean {
-		if (target.figure?.color === this.color) { // Проверка на цвет фигуры
-			return false
-		}
-		if (target.figure?.name === FigureNames.KING) { // Проверка на короля
+		if (target.figure?.color === this.color || target.figure?.name === FigureNames.KING) { // Проверка на цвет фигуры и короля
 			return false
 		}
 		return true
