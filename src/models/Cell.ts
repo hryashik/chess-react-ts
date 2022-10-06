@@ -19,17 +19,11 @@ export class Cell {
 		this.available = false
 		this.id = Math.random()
 	}
-	addLostFigure(figure: Figure) {
-		figure.color === Colors.WHITE
-			? this.board.lostWhiteFigures.push(figure)
-			: this.board.lostBlackFigures.push(figure)
-
-	}
 	moveFigure(target: Cell) {
 		if (this.figure && this.figure.canMove(target)) {
 			this.figure.moveFigure(target)
 			if (target.figure) {
-				this.addLostFigure(target.figure)
+				this.board.addLostFigure(target.figure)
 			}
 			target.setFigure(this.figure)
 			this.figure = null

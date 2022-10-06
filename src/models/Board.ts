@@ -37,10 +37,18 @@ export class Board {
 	public getCopyBoard(): Board {
 		const newBoard = new Board()
 		newBoard.cells = this.cells
+		newBoard.lostWhiteFigures = this.lostWhiteFigures
+		newBoard.lostBlackFigures = this.lostBlackFigures
 		return newBoard
 	}
 	public getCell(x: number, y: number) {
 		return this.cells[y][x]
+	}
+	addLostFigure(figure: Figure) {
+		figure.color === Colors.WHITE
+			? this.lostWhiteFigures.push(figure)
+			: this.lostBlackFigures.push(figure)
+
 	}
 	private addPawns() {
 		for (let i = 0; i < 8; i++) {

@@ -5,6 +5,14 @@ import {Cell} from "../models/Cell";
 
 import {Player} from "../models/Player";
 import {Colors} from "../models/Colors";
+import {LostFigures} from "./lostFigures";
+
+interface BoardProps {
+	board: Board
+	setBoard: (board: Board) => void
+	currentPlayer: Player | null
+	swapPlayer: () => void
+}
 
 const BoardComponent: React.FC<BoardProps> = ({ board, setBoard, currentPlayer, swapPlayer }) => {
 	const [ selectedCell, setSelectedCell ] = useState<Cell | null>(null)
@@ -54,13 +62,6 @@ const BoardComponent: React.FC<BoardProps> = ({ board, setBoard, currentPlayer, 
 		</div>
 
 )
-}
-
-interface BoardProps {
-	board: Board
-	setBoard: (board: Board) => void
-	currentPlayer: Player | null
-	swapPlayer: () => void
 }
 
 export default BoardComponent
